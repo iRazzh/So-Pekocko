@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Schéma pour les données des Sauces
 const sauceSchema = mongoose.Schema({
-   usedId: { type: String, required: true },
+   userId: { type: String, required: true }, 
    name: { type: String, required: true },
    manufacturer: { type: String, required: true },
    description: { type: String, required: true },
