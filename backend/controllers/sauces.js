@@ -73,7 +73,7 @@ exports.ratingSauce = (req, res, next) => {
   if (req.body.like === 1) {
     console.log(req.body.userId + " aime cette sauce");
     Sauce.updateOne({ _id: req.params.id }, { $push: { usersLiked: req.body.userId }, $inc: { likes: +1 } })
-      .then(() => res.status(200).json({ message: "Like ajouté !" }))
+      .then(() => res.status(200).json({ message: "Like !" }))
       .catch((error) => res.status(400).json({ error }));
   }
 
@@ -100,7 +100,7 @@ exports.ratingSauce = (req, res, next) => {
   if (req.body.like === -1) {
     console.log(req.body.userId + " n'aime pas cette sauce");
     Sauce.updateOne({ _id: req.params.id }, { $push: { usersDisliked: req.body.userId }, $inc: { dislikes: +1 } })
-      .then(() => res.status(200).json({ message: "Dislike ajouté !" }))
+      .then(() => res.status(200).json({ message: "Dislike !" }))
       .catch((error) => res.status(400).json({ error }));
   }
 };
