@@ -10,6 +10,9 @@ const mongoose = require('mongoose');
 // Ajout de "path" => Permet de travailler avec le système de fichier
 const path = require('path');
 
+// Ajout de "helmet" => Permet de sécuriser des applications Express en définissant divers en-têtes HTTP
+const helmet = require('helmet');
+
 // Création d'une application express
 const app = express();
 
@@ -31,6 +34,9 @@ app.use((req, res, next) => {
 
 // Transformation des données en un objet JSON
 app.use(bodyParser.json());
+
+// Active helmet
+app.use(helmet());
 
 // Permet de charger les fichiers qui sont dans 'images'
 app.use('/images', express.static(path.join(__dirname, 'images')));
