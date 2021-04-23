@@ -24,10 +24,13 @@ mongoose.connect(process.env.DB_CONNECTION,
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-
+// Système de sécurité CORS
 app.use((req, res, next) => {
+    // Accès à notre API depuis n'importe quelle origine grâce à "*"
     res.setHeader('Access-Control-Allow-Origin', '*');
+    // Ajoute les headers mentionnés aux requêtes envoyées vers l'API
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+    // Envoie des requêtes avec les méthodes mentionnées ci-dessous
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
   });

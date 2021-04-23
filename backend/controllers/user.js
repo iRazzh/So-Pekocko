@@ -13,7 +13,7 @@ exports.signup = (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
    
-  // Si l'email "match" avec le regex juste au-dessus, et qu'aucun caractères spéciaux sont présents, alors :
+  // Si l'email "match" avec le regex juste au-dessus, alors :
   if (email.match(regexMail)) {
     // On va 'hash' le mdp de l'utilisateur, et lui faire faire 10 tours d'algo
     bcrypt
