@@ -1,4 +1,3 @@
-// Import du package HTPP 
 const http = require('http');
 // Import de "app" pour l'utilisation de l'application sur le serveur
 const app = require('./app');
